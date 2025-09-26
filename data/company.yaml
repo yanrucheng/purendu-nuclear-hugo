@@ -1,0 +1,25 @@
+company:
+  name: "Nucleus Investment"
+  legal_name: "Nucleus Investment Partners Ltd."
+  slogan: "核相关投资 · 科学、审慎、长期"
+  jurisdiction: "CN"
+  languages:
+    - zh-cn
+    - en
+  address:
+    street: "示例路 100 号"
+    city: "北京"
+    region: "北京"
+    postal_code: "100000"
+    country: "中国"
+  contacts:
+    email: "contact@example.com"
+    phone: "+00 0000 0000"
+    response_sla: "我们将在 3–5 个工作日内回复"
+  social:
+    linkedin: ""
+    github: ""
+  organization_schema:
+    type: "Organization"
+    url: "/"
+    logo: "/img/logo.svg"

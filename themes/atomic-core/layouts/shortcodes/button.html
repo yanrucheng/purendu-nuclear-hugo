@@ -1,0 +1,4 @@
+{{ $href := .Get "href" }}
+{{ $style := .Get "style" | default "primary" }}
+{{ $class := cond (eq $style "secondary") "btn btn-secondary" "btn btn-primary" }}
+<a href="{{ $href }}" class="{{ $class }}">{{ .Inner | markdownify }}</a>

@@ -1,0 +1,10 @@
+csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64"e
+  cdefse
+    clinearGradient id="g" x1="0" x2="1"e
+      cstop offset="0" stop-color="#0A4C8A"ec/stope
+      cstop offset="1" stop-color="#1572A1"ec/stope
+    c/linearGradiente
+  c/defse
+  ccircle cx="32" cy="32" r="28" fill="url(#g)"ec/circlee
+  cpath d="M32 16c8 0 16 6 16 16s-8 16-16 16-16-6-16-16 8-16 16-16zm0 8a8 8 0 1 0 0 16 8 8 0 0 0 0-16z" fill="#fff" opacity="0.9"ec/pathe
+c/svge

@@ -1,0 +1,15 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ "/" | relURL }}">
+      <span class="brand-name">{{ site.Params.brandName }}</span>
+      <span class="brand-tagline">{{ site.Params.brandTagline }}</span>
+    </a>
+    <nav class="main-nav">
+      <ul>
+        {{ range site.Menus.main }}
+        <li><a href="{{ .URL }}"{{ if .Pre }} aria-label="{{ .Pre }}"{{ end }}>{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,34 @@
+{{ $company := site.Data.company.company }}
+{{ $title := cond (ne .Title site.Title) (printf "%s · %s" .Title site.Title) site.Title }}
+{{ $desc := .Params.description | default site.Params.brandTagline }}
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ $title }}</title>
+<link rel="canonical" href="{{ .Permalink }}">
+<meta name="description" content="{{ $desc }}">
+<meta name="theme-color" content="{{ site.Params.themeColor }}">
+
+<link rel="stylesheet" href="{{ "/css/main.css" | relURL }}">
+
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ site.Title }}">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $desc }}">
+
+{{ if $company }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "{{ $company.organization_schema.type | default "Organization" }}",
+  "name": "{{ $company.name }}",
+  "url": "{{ $company.organization_schema.url | default site.BaseURL }}",
+  "logo": "{{ $company.organization_schema.logo | default ("/img/logo.svg" | relURL) }}"
+}
+</script>
+{{ end }}

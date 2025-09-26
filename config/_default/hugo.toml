@@ -1,0 +1,105 @@
+baseURL = "/"
+languageCode = "zh-cn"
+defaultContentLanguage = "zh-cn"
+hasCJKLanguage = true
+
+# 站点标题（可在 data/company.yaml 中维护更详细信息）
+title = "Nucleus Investment"
+
+theme = "atomic-core"
+paginate = 10
+enableRobotsTXT = true
+# 清洁 URL（Hugo 默认非丑陋 URL），为明确性保留此配置
+uglyURLs = false
+
+# 输出格式：主页与分区支持 RSS，页面仅 HTML
+[outputs]
+  home    = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+  page    = ["HTML"]
+
+# 永久链接（可按需扩展更多 Section）
+[permalinks]
+  news = "/news/:slug/"
+
+# 分类法：保持轻量，后续可扩展作者/系列等
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+# Sitemap 设置
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+# 隐私默认：尽量关闭外部追踪，保持专业与中立
+[privacy]
+  [privacy.googleAnalytics]
+    anonymizeIP = true
+    disable     = true
+    respectDoNotTrack = true
+    useSessionStorage = true
+  [privacy.twitter]
+    disable = true
+  [privacy.instagram]
+    disable = true
+  [privacy.youtube]
+    privacyEnhanced = true
+
+# 标记渲染：允许短代码与内联 HTML
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+# 压缩：默认 HTML 压缩
+[minify]
+  [minify.tdewolff]
+    [minify.tdewolff.html]
+      keepWhitespace = false
+
+# 导航菜单：保持简洁、金融风格
+[menu]
+  [[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 10
+  [[menu.main]]
+    name = "关于我们"
+    url = "/about/"
+    weight = 20
+  [[menu.main]]
+    name = "策略"
+    url = "/strategy/"
+    weight = 30
+  [[menu.main]]
+    name = "团队"
+    url = "/team/"
+    weight = 40
+  [[menu.main]]
+    name = "新闻与洞察"
+    url = "/news/"
+    weight = 50
+  [[menu.main]]
+    name = "联系"
+    url = "/contact/"
+    weight = 60
+
+# 自定义参数：轻量品牌与联系占位，细化请移至 data/company.yaml
+[params]
+  brandName = "Nucleus Investment"
+  brandTagline = "核相关投资 · 科学、审慎、长期"
+  themeColor = "#0A4C8A" # 深蓝，金融友好
+  accentColor = "#1572A1" # 次级蓝
+  textColor = "#1A1A1A"
+  mutedTextColor = "#6B7280"
+  containerMax = "72rem"
+
+  [params.contact]
+    email = "contact@example.com"
+    phone = "+00 0000 0000"
+
+  [params.links]
+    linkedin = ""
+    github   = ""

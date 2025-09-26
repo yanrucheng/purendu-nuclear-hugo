@@ -1,0 +1,17 @@
+{{ $company := site.Data.company.company }}
+{{ $compliance := site.Data.compliance.disclaimers }}
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <section class="footer-block">
+      <p>{{ with $compliance.neutral_index }}{{ . }}{{ end }}</p>
+      <p class="muted">{{ with $compliance.independence_safety }}{{ . }}{{ end }}</p>
+    </section>
+    <section class="footer-block">
+      <p>联系：{{ site.Params.contact.email | default $company.contacts.email }} ｜ {{ site.Params.contact.phone | default $company.contacts.phone }}</p>
+      <p class="muted">{{ site.Params.contact.response_sla | default $company.contacts.response_sla }}</p>
+    </section>
+    <section class="footer-meta">
+      <p class="copyright">© {{ now.Year }} {{ $company.name | default site.Title }}. 保留所有权利。</p>
+    </section>
+  </div>
+</footer>

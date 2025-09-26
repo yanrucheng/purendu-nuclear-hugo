@@ -1,0 +1,76 @@
+/* Minimal, finance-appropriate baseline styles */
+:root {
+  --brand: #0A4C8A;
+  --accent: #1572A1;
+  --text: #1A1A1A;
+  --muted: #6B7280;
+  --bg: #ffffff;
+  --surface: #f8fafc;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  line-height: 1.6;
+}
+.container { max-width: 72rem; margin: 0 auto; padding: 0 1.25rem; }
+.skip-link { position: absolute; left: -9999px; }
+
+/* Header */
+.site-header { border-bottom: 1px solid #e5e7eb; background: #fff; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0; }
+.brand { text-decoration: none; color: var(--text); display: flex; flex-direction: column; }
+.brand-name { font-weight: 700; font-size: 1.125rem; }
+.brand-tagline { color: var(--muted); font-size: .875rem; }
+.main-nav ul { list-style: none; display: flex; gap: 1rem; margin: 0; padding: 0; }
+.main-nav a { text-decoration: none; color: var(--text); padding: .5rem .75rem; border-radius: .375rem; }
+.main-nav a:hover { background: #f3f4f6; }
+
+/* Hero */
+.hero { background: linear-gradient(180deg, #f8fafc, #fff); border-bottom: 1px solid #e5e7eb; }
+.hero-inner { padding: 3rem 0; text-align: center; }
+.hero h1 { font-size: clamp(1.75rem, 2.5vw, 2.5rem); margin: 0 0 .75rem; }
+.hero .subhead { color: var(--muted); margin-bottom: 1.25rem; }
+.cta-group { display: inline-flex; gap: .75rem; }
+
+/* Buttons */
+.btn { display: inline-block; text-decoration: none; font-weight: 600; border-radius: .5rem; padding: .625rem 1rem; }
+.btn-primary { background: var(--brand); color: #fff; }
+.btn-primary:hover { background: #083b6a; }
+.btn-secondary { background: #eef2f7; color: var(--text); }
+.btn-secondary:hover { background: #e6ebf2; }
+
+/* Page */
+.page-header { padding: 2rem 0 1rem; border-bottom: 1px solid #e5e7eb; }
+.page-header .lead { color: var(--muted); }
+.page-content { padding: 1rem 0 2rem; }
+
+/* List */
+.list { padding: 1rem 0 2rem; }
+.list-item { padding: 1rem 0; border-bottom: 1px solid #e5e7eb; }
+.list-item h2 { margin: 0 0 .25rem; font-size: 1.125rem; }
+.list-item .muted { color: var(--muted); font-size: .875rem; }
+
+/* Bento */
+.bento { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; padding: 1.5rem 0 2rem; }
+.card { background: var(--surface); border: 1px solid #e5e7eb; border-radius: .75rem; padding: 1rem; }
+.card h3 { margin: 0 0 .5rem; font-size: 1rem; }
+.card p { margin: 0 0 .75rem; color: var(--muted); }
+.card .readmore { color: var(--brand); text-decoration: none; font-weight: 600; }
+.card .readmore:hover { text-decoration: underline; }
+
+/* Footer */
+.site-footer { border-top: 1px solid #e5e7eb; background: #fff; }
+.footer-inner { display: grid; grid-template-columns: 2fr 1.5fr 1fr; gap: 1rem; padding: 1rem 0; }
+.footer-block p { margin: 0 0 .5rem; }
+.footer-block .muted { color: var(--muted); }
+.footer-meta { text-align: right; }
+
+/* Responsive */
+@media (max-width: 960px) {
+  .bento { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; text-align: left; }
+}
