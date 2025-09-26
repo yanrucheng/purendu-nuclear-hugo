@@ -1,9 +1,6 @@
 ---
 title: "团队"
 description: "严谨、独立、多学科背景的专业团队。"
-menu:
-  main:
-    weight: 40
 ---
 
 - 创始人 A（地学/资源）— 简介占位

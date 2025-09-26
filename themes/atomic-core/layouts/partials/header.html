@@ -7,7 +7,7 @@
     <nav class="main-nav">
       <ul>
         {{ range site.Menus.main }}
-        <li><a href="{{ .URL }}"{{ if .Pre }} aria-label="{{ .Pre }}"{{ end }}>{{ .Name }}</a></li>
+        <li><a href="{{ .URL | relLangURL }}"{{ if .Pre }} aria-label="{{ .Pre }}"{{ end }}>{{ .Name }}</a></li>
         {{ end }}
       </ul>
     </nav>

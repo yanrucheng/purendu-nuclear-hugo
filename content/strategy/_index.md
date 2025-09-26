@@ -1,9 +1,6 @@
 ---
 title: "策略"
 description: "以方法论与风控为先，聚焦成矿地学、供应链与长期价值。"
-menu:
-  main:
-    weight: 30
 ---
 
 ### 投资哲学

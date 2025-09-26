@@ -7,7 +7,8 @@ hasCJKLanguage = true
 title = "Nucleus Investment"
 
 theme = "atomic-core"
-paginate = 10
+[pagination]
+  pagerSize = 10
 enableRobotsTXT = true
 # 清洁 URL（Hugo 默认非丑陋 URL），为明确性保留此配置
 uglyURLs = false

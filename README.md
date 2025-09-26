@@ -7,7 +7,7 @@
 - 轻量自定义主题 `atomic-core`：模块化 partials（head、header/nav、footer）、基础布局（base/list/single）、最小样式。
 - 核心页面：Home（Hero）、About、Strategy、Team、News/Insights、Contact。
 - Archetypes：`default`、`post`、`person`；Shortcodes：`button`（后续可扩展）。
-- Data 目录：公司与合规元数据（地址、隐私提示、独立/中立声明）。
+- Data 目录：公司与合规元数据（地址、隐私提示、独立/中立声明），以及首页内容（hero、sections）。
 
 ## 目录结构
 ```
@@ -15,7 +15,7 @@ nuclear-invest-hugo/
   archetypes/             # 内容模板
   config/_default/        # 站点配置（hugo.toml）
   content/                # 内容页（About/Strategy/Team/News/Contact）
-  data/                   # 公司与合规数据（company.yaml / compliance.yaml）
+  data/                   # 公司与合规数据（company.yaml / compliance.yaml / homepage.yaml）
   static/                 # 静态资源（robots.txt 等）
   themes/atomic-core/     # 轻量主题
     layouts/_default/     # base/list/single 基础模板
@@ -42,6 +42,7 @@ nuclear-invest-hugo/
 ## 内容与主题扩展
 - 新增文章：`hugo new news/my-post.md`（使用 `archetypes/post.md`）
 - 新增团队成员：`hugo new team/john-doe.md`（可切换为 `data/team.yaml` 方式）
+- 首页内容编辑：修改 `data/homepage.yaml` 中的 hero/sections 数据，无需触碰模板代码。
 - 页面描述与 SEO：在内容 Front Matter 中添加 `description` 字段。
 - 菜单：`config/_default/hugo.toml` 的 `[menu.main]` 可增改；或在页面 Front Matter 中声明 `menu.main`。
 - 配色与品牌：`config/_default/hugo.toml` 的 `[params]`；主题样式在 `themes/atomic-core/static/css/main.css`。
