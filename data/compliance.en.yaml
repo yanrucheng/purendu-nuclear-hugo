@@ -1,0 +1,10 @@
+disclaimers:
+  neutral_index: "This website's international standards and resource directory is a neutral index of public information and does not constitute any endorsement, partnership, or approval."
+  independence_safety: "This company operates independently with safety as a priority. Website content is for knowledge and methodology introduction and does not constitute investment advice or commitment."
+  privacy_summary: "We follow data minimization principles and only process necessary information for consultation purposes. Please do not upload sensitive personal data."
+  response_sla: "We will respond to your inquiry within 3–5 business days."
+privacy:
+  data_minimization: true
+  consent_required: true
+  transport_encryption: true
+  access_control: true

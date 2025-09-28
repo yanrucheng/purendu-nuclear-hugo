@@ -1,0 +1,29 @@
+[[main]]
+  name = "Accueil"
+  url = "/"
+  weight = 10
+
+[[main]]
+  name = "À propos"
+  url = "/about/"
+  weight = 20
+
+[[main]]
+  name = "Stratégie"
+  url = "/strategy/"
+  weight = 30
+
+[[main]]
+  name = "Équipe"
+  url = "/team/"
+  weight = 40
+
+[[main]]
+  name = "Actualités"
+  url = "/news/"
+  weight = 50
+
+[[main]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 60

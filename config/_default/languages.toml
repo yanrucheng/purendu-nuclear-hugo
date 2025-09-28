@@ -1,0 +1,29 @@
+[en]
+  title = "Purendu Ltd."
+  weight = 1
+  languageName = "English"
+  contentDir = "content/en"
+  [en.params]
+    brandName = "Purendu Ltd."
+    brandTagline = "Nuclear Investment · Scientific, Prudent, Long-term"
+
+#
+# The additional language blocks are kept commented out so they can be
+# re-enabled quickly once localization resumes.
+#[zh-cn]
+#  title = "普仁度"
+#  weight = 2
+#  languageName = "简体中文"
+#  contentDir = "content/zh-cn"
+#  [zh-cn.params]
+#    brandName = "普仁度"
+#    brandTagline = "核相关投资 · 科学、审慎、长期"
+
+#[fr]
+#  title = "Purendu SARL"
+#  weight = 3
+#  languageName = "Français"
+#  contentDir = "content/fr"
+#  [fr.params]
+#    brandName = "Purendu SARL"
+#    brandTagline = "Investissement Nucléaire · Scientifique, Prudent, Long terme"

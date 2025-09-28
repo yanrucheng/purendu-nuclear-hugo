@@ -1,0 +1,26 @@
+company:
+  name: "Purendu SARL"
+  legal_name: "Purendu SARL"
+  slogan: "Investissement Nucléaire · Scientifique, Prudent, Long terme"
+  jurisdiction: "FR"
+  languages:
+    - fr
+    - en
+    - zh-cn
+  address:
+    street: "100 Rue de l'Exemple"
+    city: "Paris"
+    region: "Île-de-France"
+    postal_code: "75000"
+    country: "France"
+  contacts:
+    email: "support@purendu.com"
+    phone: "+33 1 00 00 00 00"
+    response_sla: "Nous vous répondrons sous 3–5 jours ouvrables"
+  social:
+    linkedin: ""
+    github: ""
+  organization_schema:
+    type: "Organization"
+    url: "/"
+    logo: "/img/logo.svg"

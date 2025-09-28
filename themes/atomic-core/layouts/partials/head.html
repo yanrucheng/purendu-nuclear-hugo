@@ -1,21 +1,28 @@
-{{ $company := site.Data.company.company }}
-{{ $title := cond (ne .Title site.Title) (printf "%s · %s" .Title site.Title) site.Title }}
-{{ $desc := .Params.description | default site.Params.brandTagline }}
+{{ $companyData := index .Site.Data.company .Site.Language.Lang }}
+{{ if not $companyData }}{{ $companyData = .Site.Data.company }}{{ end }}
+{{ $company := $companyData.company }}
+{{ $title := cond (ne .Title .Site.Title) (printf "%s · %s" .Title .Site.Title) .Site.Title }}
+{{ $desc := .Params.description | default .Site.Params.brandTagline }}
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ $title }}</title>
 <link rel="canonical" href="{{ .Permalink }}">
 <meta name="description" content="{{ $desc }}">
-<meta name="theme-color" content="{{ site.Params.themeColor }}">
+<meta name="theme-color" content="{{ .Site.Params.themeColor }}">
 
 <link rel="stylesheet" href="{{ "/css/main.css" | relURL }}">
+
+{{ range .AllTranslations }}
+<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+{{ end }}
+<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
 
 <meta property="og:title" content="{{ $title }}">
 <meta property="og:description" content="{{ $desc }}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ .Permalink }}">
-<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="{{ $title }}">
@@ -27,7 +34,7 @@
   "@context": "https://schema.org",
   "@type": "{{ $company.organization_schema.type | default "Organization" }}",
   "name": "{{ $company.name }}",
-  "url": "{{ $company.organization_schema.url | default site.BaseURL }}",
+  "url": "{{ $company.organization_schema.url | default .Site.BaseURL }}",
   "logo": "{{ $company.organization_schema.logo | default ("/img/logo.svg" | relURL) }}"
 }
 </script>

@@ -1,0 +1,26 @@
+company:
+  name: "Purendu Ltd."
+  legal_name: "Purendu Ltd."
+  slogan: "Nuclear Investment · Scientific, Prudent, Long-term"
+  jurisdiction: "UK"
+  languages:
+    - en
+    - zh-cn
+    - fr
+  address:
+    street: "100 Example Road"
+    city: "London"
+    region: "England"
+    postal_code: "SW1A 1AA"
+    country: "United Kingdom"
+  contacts:
+    email: "support@purendu.com"
+    phone: "+44 20 0000 0000"
+    response_sla: "We will respond within 3–5 business days"
+  social:
+    linkedin: ""
+    github: ""
+  organization_schema:
+    type: "Organization"
+    url: "/"
+    logo: "/img/logo.svg"

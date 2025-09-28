@@ -1,0 +1,27 @@
+hero:
+  title: "普仁度"
+  subtitle: "核相关投资 · 科学、审慎、长期"
+  description: "为核相关投资提供独立研究与战略洞察。"
+  cta_primary:
+    text: "联系我们"
+    url: "/contact/"
+  cta_secondary:
+    text: "了解更多"
+    url: "/about/"
+
+sections:
+  philosophy:
+    title: "投资哲学"
+    items:
+      - "成矿体系与采选冶方法的可验证性"
+      - "供应链与燃料循环的关键节点与风险控制"
+      - "非洲项目的治理与 ESG 实践"
+
+  team:
+    title: "我们的团队"
+    subtitle: "严谨、独立、多学科背景的专业团队"
+    description: "创始人 A（地学/资源）、合伙人 B（金融/合规）、顾问 C（核能安全/国际合作）"
+
+  news:
+    title: "新闻与洞察"
+    subtitle: "行业分析、方法札记与合规视角"

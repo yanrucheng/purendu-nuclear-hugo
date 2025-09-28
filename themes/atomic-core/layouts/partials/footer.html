@@ -1,5 +1,9 @@
-{{ $company := site.Data.company.company }}
-{{ $compliance := site.Data.compliance.disclaimers }}
+{{ $companyData := index .Site.Data.company .Site.Language.Lang }}
+{{ if not $companyData }}{{ $companyData = .Site.Data.company }}{{ end }}
+{{ $company := $companyData.company }}
+{{ $complianceData := index .Site.Data.compliance .Site.Language.Lang }}
+{{ if not $complianceData }}{{ $complianceData = .Site.Data.compliance }}{{ end }}
+{{ $compliance := $complianceData.disclaimers }}
 <footer class="site-footer">
   <div class="container footer-inner">
     <section class="footer-block">
@@ -7,11 +11,11 @@
       <p class="muted">{{ with $compliance.independence_safety }}{{ . }}{{ end }}</p>
     </section>
     <section class="footer-block">
-      <p>联系：{{ site.Params.contact.email | default $company.contacts.email }} ｜ {{ site.Params.contact.phone | default $company.contacts.phone }}</p>
-      <p class="muted">{{ site.Params.contact.response_sla | default $company.contacts.response_sla }}</p>
+      <p>Contact Us: {{ .Site.Params.contact.email | default $company.contacts.email }} ｜ {{ .Site.Params.contact.phone | default $company.contacts.phone }}</p>
+      <p class="muted">{{ .Site.Params.contact.response_sla | default $company.contacts.response_sla }}</p>
     </section>
     <section class="footer-meta">
-      <p class="copyright">© {{ now.Year }} {{ $company.name | default site.Title }}. 保留所有权利。</p>
+      <p class="copyright">© {{ now.Year }} {{ $company.name | default .Site.Title }}. Independent research index, not investment advice.</p>
     </section>
   </div>
 </footer>

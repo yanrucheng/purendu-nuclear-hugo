@@ -1,0 +1,29 @@
+[[main]]
+  name = "首页"
+  url = "/"
+  weight = 10
+
+[[main]]
+  name = "关于我们"
+  url = "/about/"
+  weight = 20
+
+[[main]]
+  name = "策略"
+  url = "/strategy/"
+  weight = 30
+
+[[main]]
+  name = "团队"
+  url = "/team/"
+  weight = 40
+
+[[main]]
+  name = "新闻与洞察"
+  url = "/news/"
+  weight = 50
+
+[[main]]
+  name = "联系"
+  url = "/contact/"
+  weight = 60

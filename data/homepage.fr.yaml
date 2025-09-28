@@ -1,0 +1,27 @@
+hero:
+  title: "Purendu SARL"
+  subtitle: "Investissement Nucléaire · Scientifique, Prudent, Long terme"
+  description: "Recherche indépendante et perspectives stratégiques pour les investissements liés au nucléaire."
+  cta_primary:
+    text: "Nous contacter"
+    url: "/contact/"
+  cta_secondary:
+    text: "En savoir plus"
+    url: "/about/"
+
+sections:
+  philosophy:
+    title: "Philosophie d'investissement"
+    items:
+      - "Systèmes minéraux et méthodes métallurgiques vérifiables"
+      - "Contrôle des risques de la chaîne d'approvisionnement et du cycle du combustible"
+      - "Gouvernance des projets africains et pratiques ESG"
+
+  team:
+    title: "Notre équipe"
+    subtitle: "Professionnels rigoureux, indépendants et multidisciplinaires"
+    description: "Fondateur A (Géosciences/Ressources), Partenaire B (Finance/Conformité), Conseiller C (Sûreté nucléaire/Coopération internationale)"
+
+  news:
+    title: "Actualités"
+    subtitle: "Analyse de l'industrie, notes méthodologiques et perspectives de conformité"

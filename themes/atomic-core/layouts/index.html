@@ -1,30 +1,37 @@
 {{ define "main" }}
+  {{ $data := index .Site.Data.homepage .Site.Language.Lang }}
+  {{ if not $data }}{{ $data = .Site.Data.homepage }}{{ end }}
   <section class="hero">
     <div class="hero-inner">
-      <h1>{{ .Site.Data.homepage.hero.title }}</h1>
-      <p class="subhead">{{ .Site.Data.homepage.hero.subtitle }}</p>
+      <h1>{{ $data.hero.title }}</h1>
+      <p class="subhead">{{ $data.hero.subtitle }}</p>
       <div class="cta-group">
-        <a href="{{ .Site.Data.homepage.hero.cta.primary.url | relLangURL }}" class="btn btn-primary">{{ .Site.Data.homepage.hero.cta.primary.text }}</a>
-        <a href="{{ .Site.Data.homepage.hero.cta.secondary.url | relLangURL }}" class="btn btn-secondary">{{ .Site.Data.homepage.hero.cta.secondary.text }}</a>
+        <a href="{{ $data.hero.cta_primary.url | relLangURL }}" class="btn btn-primary">{{ $data.hero.cta_primary.text }}</a>
+        <a href="{{ $data.hero.cta_secondary.url | relLangURL }}" class="btn btn-secondary">{{ $data.hero.cta_secondary.text }}</a>
       </div>
     </div>
   </section>
   <section class="home-sections">
     <div class="bento">
       <div class="card">
-        <h3>{{ .Site.Data.homepage.sections.philosophy.title }}</h3>
-        <p>{{ .Site.Data.homepage.sections.philosophy.description }}</p>
-        <a href="{{ .Site.Data.homepage.sections.philosophy.link_url | relLangURL }}" class="readmore">{{ .Site.Data.homepage.sections.philosophy.link_text }}</a>
+        <h3>{{ $data.sections.philosophy.title }}</h3>
+        <ul>
+          {{ range $data.sections.philosophy.items }}
+          <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+        <a href="{{ "/strategy/" | relLangURL }}" class="readmore">Learn More</a>
       </div>
       <div class="card">
-        <h3>{{ .Site.Data.homepage.sections.team.title }}</h3>
-        <p>{{ .Site.Data.homepage.sections.team.description }}</p>
-        <a href="{{ .Site.Data.homepage.sections.team.link_url | relLangURL }}" class="readmore">{{ .Site.Data.homepage.sections.team.link_text }}</a>
+        <h3>{{ $data.sections.team.title }}</h3>
+        <p>{{ $data.sections.team.subtitle }}</p>
+        <p>{{ $data.sections.team.description }}</p>
+        <a href="{{ "/team/" | relLangURL }}" class="readmore">Learn More</a>
       </div>
       <div class="card">
-        <h3>{{ .Site.Data.homepage.sections.news.title }}</h3>
-        <p>{{ .Site.Data.homepage.sections.news.description }}</p>
-        <a href="{{ .Site.Data.homepage.sections.news.link_url | relLangURL }}" class="readmore">{{ .Site.Data.homepage.sections.news.link_text }}</a>
+        <h3>{{ $data.sections.news.title }}</h3>
+        <p>{{ $data.sections.news.subtitle }}</p>
+        <a href="{{ "/news/" | relLangURL }}" class="readmore">View All</a>
       </div>
     </div>
   </section>

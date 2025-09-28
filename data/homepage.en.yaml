@@ -1,0 +1,27 @@
+hero:
+  title: "Purendu Ltd."
+  subtitle: "Nuclear Investment · Scientific, Prudent, Long-term"
+  description: "Independent research and strategic insights for nuclear-related investments."
+  cta_primary:
+    text: "Contact Us"
+    url: "/contact/"
+  cta_secondary:
+    text: "Learn More"
+    url: "/about/"
+
+sections:
+  philosophy:
+    title: "Investment Philosophy"
+    items:
+      - "Verifiable mineral systems and metallurgical methods"
+      - "Supply chain and fuel cycle risk control"
+      - "African project governance and ESG practices"
+
+  team:
+    title: "Our Team"
+    subtitle: "Rigorous, independent, multidisciplinary professionals"
+    description: "Founder A (Geosciences/Resources), Partner B (Finance/Compliance), Advisor C (Nuclear Safety/International Cooperation)"
+
+  news:
+    title: "News & Insights"
+    subtitle: "Industry analysis, methodological notes, and compliance perspectives"

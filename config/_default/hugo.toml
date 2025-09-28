@@ -1,10 +1,10 @@
 baseURL = "/"
-languageCode = "zh-cn"
-defaultContentLanguage = "zh-cn"
-hasCJKLanguage = true
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+hasCJKLanguage = false
+disableLanguages = ["fr", "zh-cn"]
 
-# 站点标题（可在 data/company.yaml 中维护更详细信息）
-title = "Nucleus Investment"
+# 站点标题（语言特定标题在 languages.toml 中配置）
 
 theme = "atomic-core"
 [pagination]
@@ -60,37 +60,10 @@ uglyURLs = false
     [minify.tdewolff.html]
       keepWhitespace = false
 
-# 导航菜单：保持简洁、金融风格
-[menu]
-  [[menu.main]]
-    name = "首页"
-    url = "/"
-    weight = 10
-  [[menu.main]]
-    name = "关于我们"
-    url = "/about/"
-    weight = 20
-  [[menu.main]]
-    name = "策略"
-    url = "/strategy/"
-    weight = 30
-  [[menu.main]]
-    name = "团队"
-    url = "/team/"
-    weight = 40
-  [[menu.main]]
-    name = "新闻与洞察"
-    url = "/news/"
-    weight = 50
-  [[menu.main]]
-    name = "联系"
-    url = "/contact/"
-    weight = 60
-
 # 自定义参数：轻量品牌与联系占位，细化请移至 data/company.yaml
 [params]
-  brandName = "Nucleus Investment"
-  brandTagline = "核相关投资 · 科学、审慎、长期"
+  brandName = "Purendu Ltd."
+  brandTagline = "Nuclear Investment · Scientific, Prudent, Long-term"
   themeColor = "#0A4C8A" # 深蓝，金融友好
   accentColor = "#1572A1" # 次级蓝
   textColor = "#1A1A1A"
@@ -98,8 +71,9 @@ uglyURLs = false
   containerMax = "72rem"
 
   [params.contact]
-    email = "contact@example.com"
-    phone = "+00 0000 0000"
+    email = "support@purendu.com"
+    phone = "+44 20 0000 0000"
+    response_sla = "We will respond within 3–5 business days"
 
   [params.links]
     linkedin = ""
