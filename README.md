@@ -57,6 +57,48 @@ Build static files:
 - Default language: `en`; for ZH/FR, use Hugo multilingual configuration (add language sections in `config/_default/`).
 - Microcopy and CTAs follow established patterns (independence and safety first; neutral index does not constitute endorsement).
 
+## Deployment
+
+### GitHub Pages Automated Deployment
+This site is configured for automated deployment to GitHub Pages using GitHub Actions.
+
+#### Setup Requirements
+1. **Repository Settings**: Enable GitHub Pages in repository settings with source set to "GitHub Actions"
+2. **Custom Domain**: Configure DNS records for `purendu.com`:
+   - **Apex domain**: Add A records pointing to:
+     - `185.199.108.153`
+     - `185.199.109.153`
+     - `185.199.110.153`
+     - `185.199.111.153`
+   - **Subdomain**: Add CNAME record pointing to `[username].github.io`
+
+#### Deployment Process
+- **Trigger**: Automatic on push to `main` branch or manual workflow dispatch
+- **Build**: Hugo builds with production settings (`HUGO_ENV=production`)
+- **Deploy**: Built site deployed to GitHub Pages via `gh-pages` branch
+- **Domain**: Custom domain `purendu.com` configured via `static/CNAME`
+
+#### Workflow Details
+The deployment workflow (`.github/workflows/deploy.yml`):
+1. Checks out repository with submodules
+2. Installs Hugo Extended
+3. Builds site with `--panicOnWarning --minify`
+4. Deploys to GitHub Pages
+5. Supports both apex and subdomain configurations
+
+#### Troubleshooting
+- **Build failures**: Check GitHub Actions logs for Hugo build errors
+- **Domain issues**: Verify DNS records and CNAME file content
+- **Mixed content**: Ensure all assets use HTTPS URLs
+- **Cache issues**: Clear browser cache or use incognito mode
+
+#### HTTPS Certificate Timeline
+After DNS configuration and GitHub Pages setup:
+- **Certificate provisioning**: 5-15 minutes after domain verification
+- **First deployment**: May take up to 30 minutes for full propagation
+- **Certificate renewal**: Automatic every 90 days via Let's Encrypt
+- **Status monitoring**: Check GitHub Pages settings for certificate status
+
 ## Maintenance and Roadmap
 - Add sections as needed (Knowledge Hub, Publications, Services), maintain modularity and simplicity.
 - Supplement Open Graph and JSON-LD (basic organizational structure support already in `head.html`).

@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://purendu.com"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 hasCJKLanguage = false
