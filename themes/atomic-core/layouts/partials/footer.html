@@ -1,21 +1,44 @@
-{{ $companyData := index .Site.Data.company .Site.Language.Lang }}
-{{ if not $companyData }}{{ $companyData = .Site.Data.company }}{{ end }}
-{{ $company := $companyData.company }}
-{{ $complianceData := index .Site.Data.compliance .Site.Language.Lang }}
-{{ if not $complianceData }}{{ $complianceData = .Site.Data.compliance }}{{ end }}
-{{ $compliance := $complianceData.disclaimers }}
+{{ $lang := .Site.Language.Lang }}
+
+{{ $companyName := "Purendu Ltd." }}
+{{ $email := "support@purendu.com" }}
+{{ $phone := "+44 20 0000 0000" }}
+{{ $responseSLA := "We will respond within 3–5 business days" }}
+{{ $neutralIndex := "This website's international standards and resource directory is a neutral index of public information and does not constitute any endorsement, partnership, or approval." }}
+{{ $independenceSafety := "This company operates independently with safety as a priority. Website content is for knowledge and methodology introduction and does not constitute investment advice or commitment." }}
+
+{{ if eq $lang "fr" }}
+  {{ $companyName = "Purendu SARL" }}
+  {{ $phone = "+33 1 00 00 00 00" }}
+  {{ $responseSLA = "Nous vous répondrons sous 3–5 jours ouvrables" }}
+  {{ $neutralIndex = "Le répertoire des normes et ressources internationales de ce site web est un index neutre d'informations publiques et ne constitue aucun endossement, partenariat ou approbation." }}
+  {{ $independenceSafety = "Cette entreprise opère indépendamment avec la sécurité comme priorité. Le contenu du site est pour l'introduction de connaissances et de méthodologies et ne constitue pas un conseil ou engagement d'investissement." }}
+{{ else if eq $lang "zh-cn" }}
+  {{ $companyName = "普仁度" }}
+  {{ $phone = "+86 10 0000 0000" }}
+  {{ $responseSLA = "我们将在 3–5 个工作日内回复" }}
+  {{ $neutralIndex = "本网站的国际标准与资源目录为公开信息的中立索引，不构成任何背书、合作或认可。" }}
+  {{ $independenceSafety = "本公司独立运营，安全优先。网站内容为知识与方法的介绍，不构成投资建议或承诺。" }}
+{{ end }}
+
+{{ $phoneHref := replaceRE "[^\\d+]" "" $phone }}
+
 <footer class="site-footer">
   <div class="container footer-inner">
-    <section class="footer-block">
-      <p>{{ with $compliance.neutral_index }}{{ . }}{{ end }}</p>
-      <p class="muted">{{ with $compliance.independence_safety }}{{ . }}{{ end }}</p>
+    <section class="footer-block footer-compliance">
+      <p>{{ $neutralIndex }}</p>
+      <p class="muted">{{ $independenceSafety }}</p>
     </section>
-    <section class="footer-block">
-      <p>Contact Us: {{ .Site.Params.contact.email | default $company.contacts.email }} | {{ .Site.Params.contact.phone | default $company.contacts.phone }}</p>
-      <p class="muted">{{ .Site.Params.contact.response_sla | default $company.contacts.response_sla }}</p>
+    <section class="footer-block footer-meta">
+      <p class="copyright">© {{ now.Year }} {{ $companyName }}. Independent research index, not investment advice.</p>
     </section>
-    <section class="footer-meta">
-      <p class="copyright">© {{ now.Year }} {{ $company.name | default .Site.Title }}. Independent research index, not investment advice.</p>
+    <section class="footer-block footer-contact" aria-labelledby="footer-contact-heading">
+      <h2 class="footer-heading" id="footer-contact-heading">{{ i18n "contactUs" }}</h2>
+      <address class="footer-contact-details">
+        <a class="footer-contact-link" href="mailto:{{ $email }}">{{ $email }}</a><br>
+        <a class="footer-contact-link" href="tel:{{ $phoneHref }}">{{ $phone }}</a>
+      </address>
+      <p class="muted">{{ $responseSLA }}</p>
     </section>
   </div>
 </footer>

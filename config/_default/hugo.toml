@@ -2,7 +2,7 @@ baseURL = "/"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 hasCJKLanguage = false
-disableLanguages = ["fr", "zh-cn"]
+# disableLanguages = ["fr", "zh-cn"]
 
 # 站点标题（语言特定标题在 languages.toml 中配置）
 
