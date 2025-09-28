@@ -1,27 +1,25 @@
 hero:
-  title: "面向非洲的地学优先核相关投资"
-  subtitle: "独立、科学与安全优先。坚持绿色、和平的民用导向。"
-  cta:
-    primary:
-      text: "请求咨询"
-      url: "/contact/"
-    secondary:
-      text: "浏览洞察"
-      url: "/news/"
+  title: "Purendu Ltd."
+  subtitle: "Nuclear Investment · Scientific, Prudent, Long-term"
+  description: "Independent research and strategic insights for nuclear-related investments."
+  cta_primary:
+    text: "Contact Us"
+    url: "/contact/"
+  cta_secondary:
+    text: "Learn More"
+    url: "/about/"
 
 sections:
   philosophy:
-    title: "投资哲学"
-    description: "以方法论与风控为先，聚焦成矿地学、供应链与长期价值。"
-    link_text: "了解策略"
-    link_url: "/strategy/"
+    title: "Investment Philosophy"
+    items:
+      - "Verifiable mineral systems and metallurgical methods"
+      - "Supply chain and fuel cycle risk control"
+      - "African project governance and ESG practices"
   team:
-    title: "团队"
-    description: "严谨、独立、多学科背景的专业团队。"
-    link_text: "认识我们"
-    link_url: "/team/"
+    title: "Our Team"
+    subtitle: "Rigorous, independent, multidisciplinary professionals"
+    description: "Founder A (Geosciences/Resources), Partner B (Finance/Compliance), Advisor C (Nuclear Safety/International Cooperation)"
   news:
-    title: "新闻与洞察"
-    description: "行业分析、方法札记与合规视角。"
-    link_text: "进入栏目"
-    link_url: "/news/"
+    title: "News & Insights"
+    subtitle: "Industry analysis, methodological notes, and compliance perspectives"

@@ -1,66 +1,66 @@
-# Nucleus Investment — Hugo 站点骨架
+# Purendu Ltd. — Hugo Site Skeleton
 
-一个面向核相关投资公司的 Hugo 静态站点基础骨架。设计目标：简洁、专业、金融友好、易扩展。
+A Hugo static site foundation for nuclear-related investment companies. Design goals: clean, professional, finance-friendly, and easily extensible.
 
-## 功能概览
-- 标准 Hugo 结构与可扩展配置（菜单、分类、Sitemap、Robots、Privacy）。
-- 轻量自定义主题 `atomic-core`：模块化 partials（head、header/nav、footer）、基础布局（base/list/single）、最小样式。
-- 核心页面：Home（Hero）、About、Strategy、Team、News/Insights、Contact。
-- Archetypes：`default`、`post`、`person`；Shortcodes：`button`（后续可扩展）。
-- Data 目录：公司与合规元数据（地址、隐私提示、独立/中立声明），以及首页内容（hero、sections）。
+## Features Overview
+- Standard Hugo structure with extensible configuration (menus, taxonomy, Sitemap, Robots, Privacy).
+- Lightweight custom theme `atomic-core`: modular partials (head, header/nav, footer), basic layouts (base/list/single), minimal styling.
+- Core pages: Home (Hero), About, Strategy, Team, News/Insights, Contact.
+- Archetypes: `default`, `post`, `person`; Shortcodes: `button` (extensible).
+- Data directory: company and compliance metadata (addresses, privacy notices, independence/neutrality statements), plus homepage content (hero, sections).
 
-## 目录结构
+## Directory Structure
 ```
 nuclear-invest-hugo/
-  archetypes/             # 内容模板
-  config/_default/        # 站点配置（hugo.toml）
-  content/                # 内容页（About/Strategy/Team/News/Contact）
-  data/                   # 公司与合规数据（company.yaml / compliance.yaml / homepage.yaml）
-  static/                 # 静态资源（robots.txt 等）
-  themes/atomic-core/     # 轻量主题
-    layouts/_default/     # base/list/single 基础模板
+  archetypes/             # Content templates
+  config/_default/        # Site configuration (hugo.toml)
+  content/                # Content pages (About/Strategy/Team/News/Contact)
+  data/                   # Company and compliance data (company.yaml / compliance.yaml / homepage.yaml)
+  static/                 # Static assets (robots.txt etc.)
+  themes/atomic-core/     # Lightweight theme
+    layouts/_default/     # base/list/single base templates
     layouts/partials/     # head/header/footer partials
-    layouts/shortcodes/   # button 等短代码
-    static/css/           # 主题样式（main.css）
-    static/img/           # 主题图片（logo.svg）
+    layouts/shortcodes/   # button and other shortcodes
+    static/css/           # Theme styles (main.css)
+    static/img/           # Theme images (logo.svg)
 ```
 
-## 本地开发
-前置：安装 Hugo（建议 extended 版）。
-- macOS（Homebrew）：`brew install hugo`
-- Ubuntu/Debian：`apt install hugo`
-- 或从官方 Releases 下载二进制（extended）。
+## Local Development
+Prerequisites: Install Hugo (extended version recommended).
+- macOS (Homebrew): `brew install hugo`
+- Ubuntu/Debian: `apt install hugo`
+- Or download binary from official Releases (extended).
 
-开发与预览：
-- 在项目根目录运行：`hugo server -D`
-- 浏览器访问：`http://localhost:1313`
+Development and preview:
+- Run from project root: `hugo server -D`
+- Browser access: `http://localhost:1313`
 
-构建静态文件：
-- 在项目根目录运行：`hugo`
-- 生成目录：`public/`
+Build static files:
+- Run from project root: `hugo`
+- Output directory: `public/`
 
-## 内容与主题扩展
-- 新增文章：`hugo new news/my-post.md`（使用 `archetypes/post.md`）
-- 新增团队成员：`hugo new team/john-doe.md`（可切换为 `data/team.yaml` 方式）
-- 首页内容编辑：修改 `data/homepage.yaml` 中的 hero/sections 数据，无需触碰模板代码。
-- 页面描述与 SEO：在内容 Front Matter 中添加 `description` 字段。
-- 菜单：`config/_default/hugo.toml` 的 `[menu.main]` 可增改；或在页面 Front Matter 中声明 `menu.main`。
-- 配色与品牌：`config/_default/hugo.toml` 的 `[params]`；主题样式在 `themes/atomic-core/static/css/main.css`。
-- 短代码：示例 `{{< button href="/contact/" >}}请求咨询{{< /button >}}`；可在 `layouts/shortcodes/` 目录新增 `note`、`quote` 等。
+## Content and Theme Extensions
+- New articles: `hugo new news/my-post.md` (uses `archetypes/post.md`)
+- New team members: `hugo new team/john-doe.md` (can switch to `data/team.yaml` approach)
+- Homepage content: Edit hero/sections data in `data/homepage.yaml`, no template changes needed.
+- Page descriptions and SEO: Add `description` field in content Front Matter.
+- Menus: Modify `[menu.main]` in `config/_default/hugo.toml`; or declare `menu.main` in page Front Matter.
+- Colors and branding: Use `[params]` in `config/_default/hugo.toml`; theme styles in `themes/atomic-core/static/css/main.css`.
+- Shortcodes: Example `{{< button href="/contact/" >}}Contact Us{{< /button >}}`; add `note`, `quote` etc. in `layouts/shortcodes/`.
 
-## 合规与隐私
-- 站点默认启用 `enableRobotsTXT = true` 与 Sitemap；`privacy` 配置尽量关闭外部追踪与嵌入。
-- 页脚展示中立索引与独立声明：内容源自 `data/compliance.yaml`。
-- 表单与数据上传不在本期范围；后续若需要，建议采用静态表单服务或最小后端，严格遵循数据最小化原则。
+## Compliance and Privacy
+- Site defaults to `enableRobotsTXT = true` with Sitemap; `privacy` configuration minimizes external tracking and embeds.
+- Footer displays neutrality index and independence statements: content from `data/compliance.yaml`.
+- Forms and data uploads not in scope; if needed later, recommend static form services or minimal backend with strict data minimization.
 
-## 命名与国际化
-- 默认语言：`zh-cn`；如需 EN/FR，可采用 Hugo 多语言配置（`config/_default/` 下新增语言段）。
-- 微文案与 CTA 可参考既有规划（独立与安全优先；中立索引不构成背书）。
+## Naming and Internationalization
+- Default language: `en`; for ZH/FR, use Hugo multilingual configuration (add language sections in `config/_default/`).
+- Microcopy and CTAs follow established patterns (independence and safety first; neutral index does not constitute endorsement).
 
-## 维护与后续路线
-- 按需新增 Section（如 Knowledge Hub、Publications、Services），保持模块化与简洁。
-- 补充 Open Graph 与 JSON-LD（已在 `head.html` 基础支持组织结构）。
-- 引入自定义字体时建议自托管，避免第三方隐私问题；目前采用系统字体优先级。
+## Maintenance and Roadmap
+- Add sections as needed (Knowledge Hub, Publications, Services), maintain modularity and simplicity.
+- Supplement Open Graph and JSON-LD (basic organizational structure support already in `head.html`).
+- When introducing custom fonts, recommend self-hosting to avoid third-party privacy issues; currently uses system font stack.
 
-## 许可证
-本仓库为项目骨架与示例内容，后续请结合公司实际信息替换占位文本与数据。
+## License
+This repository provides project skeleton and sample content; replace placeholder text and data with actual company information.

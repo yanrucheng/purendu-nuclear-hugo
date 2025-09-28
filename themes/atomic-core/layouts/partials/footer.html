@@ -11,7 +11,7 @@
       <p class="muted">{{ with $compliance.independence_safety }}{{ . }}{{ end }}</p>
     </section>
     <section class="footer-block">
-      <p>Contact Us: {{ .Site.Params.contact.email | default $company.contacts.email }} ｜ {{ .Site.Params.contact.phone | default $company.contacts.phone }}</p>
+      <p>Contact Us: {{ .Site.Params.contact.email | default $company.contacts.email }} | {{ .Site.Params.contact.phone | default $company.contacts.phone }}</p>
       <p class="muted">{{ .Site.Params.contact.response_sla | default $company.contacts.response_sla }}</p>
     </section>
     <section class="footer-meta">

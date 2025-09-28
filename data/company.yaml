@@ -1,21 +1,22 @@
 company:
-  name: "Nucleus Investment"
-  legal_name: "Nucleus Investment Partners Ltd."
-  slogan: "核相关投资 · 科学、审慎、长期"
-  jurisdiction: "CN"
+  name: "Purendu Ltd."
+  legal_name: "Purendu Ltd."
+  slogan: "Nuclear Investment · Scientific, Prudent, Long-term"
+  jurisdiction: "UK"
   languages:
-    - zh-cn
     - en
+    - zh-cn
+    - fr
   address:
-    street: "示例路 100 号"
-    city: "北京"
-    region: "北京"
-    postal_code: "100000"
-    country: "中国"
+    street: "100 Example Road"
+    city: "London"
+    region: "England"
+    postal_code: "SW1A 1AA"
+    country: "United Kingdom"
   contacts:
-    email: "contact@example.com"
-    phone: "+00 0000 0000"
-    response_sla: "我们将在 3–5 个工作日内回复"
+    email: "support@purendu.com"
+    phone: "+44 20 0000 0000"
+    response_sla: "We will respond within 3–5 business days"
   social:
     linkedin: ""
     github: ""
