@@ -1,6 +1,5 @@
 {{ define "main" }}
-  {{ $data := index .Site.Data.homepage .Site.Language.Lang }}
-  {{ if not $data }}{{ $data = .Site.Data.homepage }}{{ end }}
+  {{ $data := .Site.Data.homepage }}
   <section class="hero">
     <div class="hero-inner">
       <h1>{{ $data.hero.title }}</h1>
