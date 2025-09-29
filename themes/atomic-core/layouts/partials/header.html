@@ -11,10 +11,11 @@
         {{ end }}
       </ul>
     </nav>
+    {{ if .Site.Params.languageSwitcherEnabled }}
     {{ $languages := .Site.Languages }}
     {{ $hasAlternates := gt (len $languages) 1 }}
     <details class="language-switcher"{{ if not $hasAlternates }} hidden{{ end }}>
-      <summary class="language-toggle" aria-label="Language">
+      <summary class="language-toggle" aria-label="{{ i18n "languageSwitch" }}">
         {{ .Site.Language.LanguageName }}
       </summary>
       {{ if $hasAlternates }}
@@ -34,5 +35,6 @@
       </ul>
       {{ end }}
     </details>
+    {{ end }}
   </div>
 </header>
