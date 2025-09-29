@@ -14,23 +14,28 @@
     <div class="bento">
       <div class="card">
         <h3>{{ $data.sections.philosophy.title }}</h3>
+        <p>{{ $data.sections.philosophy.summary }}</p>
+        {{ if $data.sections.philosophy.items }}
         <ul>
           {{ range $data.sections.philosophy.items }}
           <li>{{ . }}</li>
           {{ end }}
         </ul>
-        <a href="{{ "/strategy/" | relLangURL }}" class="readmore">Learn More</a>
+        {{ end }}
+        <a href="{{ $data.sections.philosophy.cta.url | relLangURL }}" class="readmore">{{ $data.sections.philosophy.cta.text }}</a>
       </div>
       <div class="card">
         <h3>{{ $data.sections.team.title }}</h3>
-        <p>{{ $data.sections.team.subtitle }}</p>
+        <p>{{ $data.sections.team.summary }}</p>
+        {{ if $data.sections.team.description }}
         <p>{{ $data.sections.team.description }}</p>
-        <a href="{{ "/team/" | relLangURL }}" class="readmore">Learn More</a>
+        {{ end }}
+        <a href="{{ $data.sections.team.cta.url | relLangURL }}" class="readmore">{{ $data.sections.team.cta.text }}</a>
       </div>
       <div class="card">
         <h3>{{ $data.sections.news.title }}</h3>
-        <p>{{ $data.sections.news.subtitle }}</p>
-        <a href="{{ "/news/" | relLangURL }}" class="readmore">View All</a>
+        <p>{{ $data.sections.news.summary }}</p>
+        <a href="{{ $data.sections.news.cta.url | relLangURL }}" class="readmore">{{ $data.sections.news.cta.text }}</a>
       </div>
     </div>
   </section>
