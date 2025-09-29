@@ -24,5 +24,10 @@ hugo new news/post.md    # New content
 - `data/` - Company/compliance data
 - `archetypes/` - Content templates
 
+## i18n Status
+- Infrastructure maintained for future multilingual support
+- Language switcher hidden for simplified current development
+- Ready for reactivation when needed
+
 ## Commits
 Use conventional format: `feat:`, `chore:`, `bugfix:`, etc. No Claude Code co-authoring.
