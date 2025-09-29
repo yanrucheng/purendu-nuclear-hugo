@@ -12,16 +12,24 @@ hero:
 sections:
   philosophy:
     title: "Philosophie d'investissement"
+    summary: "Notre approche d'investissement se concentre sur les systèmes vérifiables, le contrôle des risques et la gouvernance."
     items:
       - "Systèmes minéraux et méthodes métallurgiques vérifiables"
       - "Contrôle des risques de la chaîne d'approvisionnement et du cycle du combustible"
       - "Gouvernance des projets africains et pratiques ESG"
-
+    cta:
+      text: "En savoir plus"
+      url: "/strategy/"
   team:
     title: "Notre équipe"
-    subtitle: "Professionnels rigoureux, indépendants et multidisciplinaires"
+    summary: "Professionnels rigoureux, indépendants et multidisciplinaires"
     description: "Fondateur A (Géosciences/Ressources), Partenaire B (Finance/Conformité), Conseiller C (Sûreté nucléaire/Coopération internationale)"
-
+    cta:
+      text: "En savoir plus"
+      url: "/team/"
   news:
     title: "Actualités"
-    subtitle: "Analyse de l'industrie, notes méthodologiques et perspectives de conformité"
+    summary: "Analyse de l'industrie, notes méthodologiques et perspectives de conformité"
+    cta:
+      text: "Tout voir"
+      url: "/news/"
