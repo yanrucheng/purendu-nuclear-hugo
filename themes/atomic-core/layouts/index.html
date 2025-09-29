@@ -1,5 +1,7 @@
 {{ define "main" }}
-  {{ $data := .Site.Data.homepage }}
+  {{ $lang := .Site.Language.Lang }}
+  {{ $data := index .Site.Data.homepage $lang | default (index .Site.Data.homepage "en") }}
+  {{ if $data }}
   <section class="hero">
     <div class="hero-inner">
       <h1>{{ $data.hero.title }}</h1>
@@ -39,4 +41,5 @@
       </div>
     </div>
   </section>
+  {{ end }}
 {{ end }}
