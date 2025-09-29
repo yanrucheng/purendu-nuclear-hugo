@@ -1,45 +1,52 @@
 {{ define "main" }}
   {{ $lang := .Site.Language.Lang }}
-  {{ $data := index .Site.Data.homepage $lang | default (index .Site.Data.homepage "en") }}
-  {{ if $data }}
-  <section class="hero">
-    <div class="hero-inner">
-      <h1>{{ $data.hero.title }}</h1>
-      <p class="subhead">{{ $data.hero.subtitle }}</p>
-      <div class="cta-group">
-        <a href="{{ $data.hero.cta_primary.url | relLangURL }}" class="btn btn-primary">{{ $data.hero.cta_primary.text }}</a>
-        <a href="{{ $data.hero.cta_secondary.url | relLangURL }}" class="btn btn-secondary">{{ $data.hero.cta_secondary.text }}</a>
+  {{ $data := .Site.Data.homepage }}
+  {{ with $data }}
+    {{ $langData := or (index . $lang) (index . "en") }}
+    {{ with $langData }}
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>{{ .hero.title }}</h1>
+        <p class="subhead">{{ .hero.subtitle }}</p>
+        <div class="cta-group">
+          <a href="{{ .hero.cta_primary.url | relLangURL }}" class="btn btn-primary">{{ .hero.cta_primary.text }}</a>
+          <a href="{{ .hero.cta_secondary.url | relLangURL }}" class="btn btn-secondary">{{ .hero.cta_secondary.text }}</a>
+        </div>
       </div>
-    </div>
-  </section>
-  <section class="home-sections">
-    <div class="bento">
-      <div class="card">
-        <h3>{{ $data.sections.philosophy.title }}</h3>
-        <p>{{ $data.sections.philosophy.summary }}</p>
-        {{ if $data.sections.philosophy.items }}
-        <ul>
-          {{ range $data.sections.philosophy.items }}
-          <li>{{ . }}</li>
+    </section>
+    <section class="home-sections">
+      <div class="bento">
+        <div class="card">
+          <h3>{{ .sections.philosophy.title }}</h3>
+          <p>{{ .sections.philosophy.summary }}</p>
+          {{ if .sections.philosophy.items }}
+          <ul>
+            {{ range .sections.philosophy.items }}
+            <li>{{ . }}</li>
+            {{ end }}
+          </ul>
           {{ end }}
-        </ul>
-        {{ end }}
-        <a href="{{ $data.sections.philosophy.cta.url | relLangURL }}" class="readmore">{{ $data.sections.philosophy.cta.text }}</a>
+          <a href="{{ .sections.philosophy.cta.url | relLangURL }}" class="readmore">{{ .sections.philosophy.cta.text }}</a>
+        </div>
+        <div class="card">
+          <h3>{{ .sections.team.title }}</h3>
+          <p>{{ .sections.team.summary }}</p>
+          {{ if .sections.team.description }}
+          <p>{{ .sections.team.description }}</p>
+          {{ end }}
+          <a href="{{ .sections.team.cta.url | relLangURL }}" class="readmore">{{ .sections.team.cta.text }}</a>
+        </div>
+        <div class="card">
+          <h3>{{ .sections.news.title }}</h3>
+          <p>{{ .sections.news.summary }}</p>
+          <a href="{{ .sections.news.cta.url | relLangURL }}" class="readmore">{{ .sections.news.cta.text }}</a>
+        </div>
       </div>
-      <div class="card">
-        <h3>{{ $data.sections.team.title }}</h3>
-        <p>{{ $data.sections.team.summary }}</p>
-        {{ if $data.sections.team.description }}
-        <p>{{ $data.sections.team.description }}</p>
-        {{ end }}
-        <a href="{{ $data.sections.team.cta.url | relLangURL }}" class="readmore">{{ $data.sections.team.cta.text }}</a>
-      </div>
-      <div class="card">
-        <h3>{{ $data.sections.news.title }}</h3>
-        <p>{{ $data.sections.news.summary }}</p>
-        <a href="{{ $data.sections.news.cta.url | relLangURL }}" class="readmore">{{ $data.sections.news.cta.text }}</a>
-      </div>
-    </div>
-  </section>
+    </section>
+    {{ else }}
+    {{ warnf "Homepage data not found for language %s" $lang }}
+    {{ end }}
+  {{ else }}
+  {{ warnf "No homepage data found" }}
   {{ end }}
 {{ end }}
