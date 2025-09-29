@@ -78,3 +78,6 @@ uglyURLs = false
   [params.links]
     linkedin = ""
     github   = ""
+
+  # Feature flags
+  languageSwitcherEnabled = false
