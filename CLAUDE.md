@@ -24,5 +24,13 @@ hugo new news/post.md    # New content
 - `data/` - Company/compliance data
 - `archetypes/` - Content templates
 
+## Data Localization Pattern
+Homepage content uses locale-specific data files with English fallback:
+- `data/homepage.en.yaml` - English content (fallback)
+- `data/homepage.zh-cn.yaml` - Chinese content
+- `data/homepage.fr.yaml` - French content
+
+Template lookup: `{{ index .Site.Data.homepage .Site.Language.Lang | default (index .Site.Data.homepage "en") }}`
+
 ## Commits
 Use conventional format: `feat:`, `chore:`, `bugfix:`, etc. No Claude Code co-authoring.
